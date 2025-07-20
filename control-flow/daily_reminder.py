@@ -1,36 +1,22 @@
-# daily_reminder.py
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Prompt for a single task
-task = input("Enter your task: ").strip()
+if priority not in ['high', 'medium', 'low']:
+    print("Invalid priority level. Please enter 'high', 'medium', or 'low'.")
+else:
+    if time_bound not in ['yes', 'no']:
+        print("Invalid response for time-bound. Please enter 'yes' or 'no'.")
+    else:
+        match priority:
+            case 'high':
+                reminder = f"Reminder: '{task}' is a high priority task that requires immediate attention!"
+            case 'medium':
+                reminder = f"Reminder: '{task}' is a medium priority task. Try to complete it soon."
+            case 'low':
+                reminder = f"Reminder: '{task}' is a low priority task. Consider completing it when you have free time."
 
-# Prompt for task priority with input validation
-while True:
-    priority = input("Priority (high/medium/low): ").strip().lower()
-    if priority in ("high", "medium", "low"):
-        break
-    print("Invalid input. Please enter 'high', 'medium', or 'low'.")
+        if time_bound == 'yes':
+            reminder += " Don't forget, it needs to be done today!"
 
-# Prompt for time sensitivity with input validation
-while True:
-    time_bound = input("Is it time-bound? (yes/no): ").strip().lower()
-    if time_bound in ("yes", "no"):
-        break
-    print("Invalid input. Please enter 'yes' or 'no'.")
-
-# Use match-case to determine base message based on priority
-match priority:
-    case "high":
-        reminder = f"Reminder: '{task}' is a high priority task"
-    case "medium":
-        reminder = f"Note: '{task}' is a medium priority task. Try to get it done soon."
-    case "low":
-        reminder = f"Note: '{task}' is a low priority task. Complete it when you have time."
-
-# Append time sensitivity if applicable
-if time_bound == "yes":
-    reminder += " that requires immediate attention today!"
-
-# Print the customized reminder
-print("\n" + reminder)
-
-
+        print("Reminder:", reminder)
