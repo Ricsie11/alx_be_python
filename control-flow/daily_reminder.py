@@ -17,7 +17,7 @@ while True:
         break
     print("Invalid input. Please enter 'yes' or 'no'.")
 
-# Use match-case to create the initial reminder based on priority
+# Use match-case to determine base message based on priority
 match priority:
     case "high":
         reminder = f"Reminder: '{task}' is a high priority task"
@@ -26,7 +26,7 @@ match priority:
     case "low":
         reminder = f"Note: '{task}' is a low priority task. Complete it when you have time."
 
-# Add urgency if time-bound
+# Append time sensitivity if applicable
 if time_bound == "yes":
     reminder += " that requires immediate attention today!"
 
