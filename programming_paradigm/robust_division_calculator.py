@@ -1,10 +1,9 @@
 def safe_divide(numerator, denominator):
     try:
-        print("DEBUG: Inside try block")
         num = float(numerator)
         den = float(denominator)
         result = num / den
-        return f"Result: {result}"
+        return f"The result of the division is {result}"
     except ValueError:
         return "Error: Please enter numeric values only."
     except ZeroDivisionError:
