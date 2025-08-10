@@ -15,5 +15,5 @@ class Book:
 
     #Destructor
     def __del__(self):
-       print (f'deleting {self.title}')
+       print (f'Deleting {self.title}')
     
