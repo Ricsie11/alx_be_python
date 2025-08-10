@@ -10,7 +10,7 @@ class Book:
         return f'{self.title} by {self.author}, published {self.year}.'
     
     def __repr__(self):
-        return f"Book('Title: {self.title}', Author: '{self.author}', Year: {self.year})."
+        return f"Book(' {self.title}', '{self.author}', {self.year})."
     
 
     #Destructor
